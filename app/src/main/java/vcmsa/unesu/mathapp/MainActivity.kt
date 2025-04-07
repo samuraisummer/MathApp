@@ -6,6 +6,7 @@ import android.annotation.SuppressLint
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
+import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -28,11 +29,14 @@ class MainActivity : AppCompatActivity() {
         val input1 = findViewById<EditText>(R.id.edTfirstnum)
         val input2 = findViewById<EditText>(R.id.edTsecondnumber)
         val clickMe = findViewById<Button>(R.id.btnAdd)
+        val textView = findViewById<TextView>(R.id.txtSum)
         //set onClickListener for the button
         clickMe.setOnClickListener {
-                //tries to turn the string into a number
+                //try to turn the string into a number
                 val numberInt = input1.text.toString().toInt()
-
+            val input2 = input2.text.toString().toInt()
+            val sum = numberInt.toInt() + input2.toInt()
+            textView.text = "Result: $sum"
         }
     }
 }
